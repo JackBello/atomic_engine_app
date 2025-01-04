@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+    <!-- Fondo del canvas -->
+    <rect x="4" y="4" width="56" height="56" rx="8" fill="#F5F5F5" stroke="#B0BEC5" stroke-width="2" />
+
+    <!-- GlobalNode -->
+    <polygon points="32,10 48,32 32,54 16,32" fill="#BDBDBD" opacity="0.8" />
+    <polygon points="32,12 46,32 32,52 18,32" fill="white" opacity="0.2" />
+
+    <!-- Node2D -->
+    <rect x="18" y="18" width="12" height="12" fill="url(#blueGradient)" rx="2" stroke="#1E88E5" stroke-width="1.5" />
+
+    <!-- Node3D -->
+    <polygon points="40,20 48,28 40,36 32,28" fill="url(#purpleGradient)" stroke="#8E24AA" stroke-width="1.5" />
+
+    <!-- Puntos de unión -->
+    <circle cx="32" cy="32" r="4" fill="#FFFFFF" stroke="#B0BEC5" stroke-width="2" />
+
+    <!-- Sombra ligera -->
+    <circle cx="32" cy="32" r="26" fill="none" stroke="#E0E0E0" stroke-dasharray="4,2" stroke-width="0.5" />
+
+    <!-- Definiciones de gradientes -->
+    <defs>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#64B5F6;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#9C27B0;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#BA68C8;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+</svg>

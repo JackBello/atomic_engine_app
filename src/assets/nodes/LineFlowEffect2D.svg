@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+    <!-- Línea fluida -->
+    <path d="M8,32c8-16,16,16,24,0s16-16,24,0" stroke="url(#blueGradient)" stroke-width="3" fill="none"
+        stroke-linecap="round" />
+
+    <!-- Definiciones de gradiente -->
+    <defs>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#64B5F6;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+</svg>
