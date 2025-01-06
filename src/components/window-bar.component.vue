@@ -19,6 +19,7 @@ import { useSceneChange } from '@/domain/utils/scene';
 import { useEngineStore } from '@/stores/engine.store';
 import { useSceneStore } from '@/stores/scene.store';
 import { useModalStore } from '@/stores/modal.store';
+import { useProjectStore } from '@/stores/project.store';
 
 const route = useRoute()
 const router = useRouter()
@@ -28,9 +29,11 @@ const stateStorage = useStorage("engine", storage)
 
 const engineStore = useEngineStore()
 const modalStore = useModalStore()
+const projectStore = useProjectStore()
 const { currentNodes, currentScene } = storeToRefs(useSceneStore())
-const { currentProject, engine, modeEngine } = storeToRefs(engineStore)
-const { getPathProject } = engineStore
+const { engine, modeEngine } = storeToRefs(engineStore)
+const { currentProject } = storeToRefs(projectStore)
+const { getPathProject } = projectStore
 const { hasChangeScene, saveChange } = useSceneChange(stateStorage)
 
 const win = ref<Window | null>(null)

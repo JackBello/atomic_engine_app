@@ -13,12 +13,15 @@ import storage from '@/domain/utils/storage';
 import { useModalStore } from '@/stores/modal.store';
 import { useSceneStore } from '@/stores/scene.store';
 import { useEngineStore } from '@/stores/engine.store';
+import { useProjectStore } from '@/stores/project.store';
 
 const engineStore = useEngineStore()
 const modalStore = useModalStore()
+const projectStore = useProjectStore()
+
 const { engine } = storeToRefs(engineStore)
 const { scenes, currentScene } = storeToRefs(useSceneStore())
-const { getPathProject } = engineStore
+const { getPathProject } = projectStore
 
 const stateStorage = useStorage("engine", storage)
 

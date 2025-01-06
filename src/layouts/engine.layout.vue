@@ -23,12 +23,15 @@ import { useMenuStore } from '@/stores/menus.store';
 import PanelFilesystemComponent from '@/components/engine/panel-filesystem.component.vue';
 import SelectionPlugin from '@/domain/engine/plugins/selection/plugin';
 import ContextMenuBasicComponent from '@/components/context-menu-basic.component.vue';
+import { useProjectStore } from '@/stores/project.store';
 
 const engineStore = useEngineStore()
+const projectStore = useProjectStore()
+
 const { scenes, currentScene, currentNodes, hoverNode, referenceNode } = storeToRefs(useSceneStore())
-const { getPathProject } = engineStore
+const { getPathProject } = projectStore
 const stateStorage = useStorage("engine", storage)
-const { engine, positionMouse } = storeToRefs(useEngineStore())
+const { engine, positionMouse } = storeToRefs(engineStore)
 const { menuNodeOptions, menuCanvasOptions } = storeToRefs(useMenuStore())
 
 const { width, height } = useWindowSize()

@@ -3,19 +3,19 @@ import { useStorage } from "@vueuse/core"
 
 import storage from "./storage"
 
-import { useEngineStore } from "@/stores/engine.store"
+import { useProjectStore } from "@/stores/project.store"
 
 export const isOpenProject = () => {
-    const { currentProject } = storeToRefs(useEngineStore())
+    const { currentProject } = storeToRefs(useProjectStore())
 
     return currentProject.value !== null
 }
 
 export const loadOpenProject = async () => {
     const stateStorage = useStorage("engine", storage)
-    const engineStore = useEngineStore()
-    const { currentProject } = storeToRefs(engineStore)
-    const { getProject } = engineStore
+    const projectStore = useProjectStore()
+    const { currentProject } = storeToRefs(projectStore)
+    const { getProject } = projectStore
 
     if (currentProject.value) return
 

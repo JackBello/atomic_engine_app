@@ -13,13 +13,13 @@ import IconComponent from '@/components/icon.component.vue';
 import { compareTime, getDateNow, timeAgo } from '@/domain/utils/dates';
 import storage from '@/domain/utils/storage';
 
-import { useEngineStore } from '@/stores/engine.store';
+import { useProjectStore } from '@/stores/project.store';
 
 const stateStorage = useStorage("engine", storage)
 
-const engineStore = useEngineStore()
-const { getProjects, editProject } = engineStore
-const { projects, currentProject } = storeToRefs(engineStore)
+const projectStore = useProjectStore()
+const { getProjects, editProject } = projectStore
+const { projects, currentProject } = storeToRefs(projectStore)
 
 const toast = useToast()
 const confirmDialog = useConfirm()
@@ -79,7 +79,7 @@ const handleClick_moveTrashProject = (project: IProject) => {
 
 const handleClick_toggleFavorites = async (project: IProject) => {
     const data = { ...project };
-
+    
     data.favorite = !data.favorite
 
     await editProject(data)

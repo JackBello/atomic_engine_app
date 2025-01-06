@@ -11,14 +11,14 @@ import IconComponent from '@/components/icon.component.vue';
 
 import { timeAgo } from '@/domain/utils/dates';
 
-import { useEngineStore } from '@/stores/engine.store';
+import { useProjectStore } from '@/stores/project.store';
 
 const toast = useToast()
 const confirmDialog = useConfirm()
 
-const engineStore = useEngineStore()
-const { getProjects, deleteProject, editProject } = engineStore
-const { projects } = storeToRefs(engineStore)
+const projectStore = useProjectStore()
+const { getProjects, deleteProject, editProject } = projectStore
+const { projects } = storeToRefs(projectStore)
 
 const loadingProjects = ref(true);
 

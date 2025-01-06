@@ -4,13 +4,13 @@ import { ref } from 'vue';
 import { useModalStore } from '@/stores/modal.store';
 import FileExplorerComponent from '../file-explorer.component.vue';
 import type { TFileElement } from '@/types';
-import { useEngineStore } from '@/stores/engine.store';
+import { useProjectStore } from '@/stores/project.store';
 import IconComponent from '../icon.component.vue';
 
 const modalStore = useModalStore()
 
 const modal = modalStore.getModal("file_explorer");
-const { currentProject } = useEngineStore()
+const { currentProject } = useProjectStore()
 
 const showFileSystem = ref(false)
 

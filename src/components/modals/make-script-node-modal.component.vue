@@ -7,10 +7,11 @@ import { useModalStore } from '@/stores/modal.store';
 import IconComponent from '../icon.component.vue';
 import { ConstructorNodes, type GlobalNode } from 'atomic-engine-lib';
 import { listIconNode } from '@/domain/utils/icons';
-import { useEngineStore } from '@/stores/engine.store';
+import { useProjectStore } from '@/stores/project.store';
 
 const modalStore = useModalStore()
-const { currentProject } = useEngineStore()
+const projectStore = useProjectStore()
+const { currentProject } = projectStore
 
 const modal = modalStore.getModal("make_script_node")
 const dataFileExplorer = computed(() => modalStore.getModal("file_explorer").data)

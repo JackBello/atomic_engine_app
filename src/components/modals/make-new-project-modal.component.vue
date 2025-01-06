@@ -13,10 +13,15 @@ import { getDateNow } from "@/domain/utils/dates";
 
 import { useModalStore } from '@/stores/modal.store';
 import { useEngineStore } from '@/stores/engine.store';
+import { useProjectStore } from "@/stores/project.store";
 
 const engineStore = useEngineStore()
-const { addProject } = useEngineStore()
-const { projects, root } = storeToRefs(engineStore)
+const projectStore = useProjectStore()
+
+const { root } = storeToRefs(engineStore)
+
+const { projects } = storeToRefs(projectStore)
+const { addProject } = projectStore
 
 const modalStore = useModalStore()
 const modal = modalStore.getModal("make_new_project")

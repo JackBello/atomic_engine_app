@@ -14,9 +14,14 @@ import storage from '@/domain/utils/storage';
 
 import { useEngineStore } from '@/stores/engine.store';
 import WindowBarComponent from './components/window-bar.component.vue';
+import { useProjectStore } from './stores/project.store';
 
 const engineStore = useEngineStore()
-const { loading, store, root } = storeToRefs(engineStore)
+const projectStore = useProjectStore()
+
+const { loading, root } = storeToRefs(engineStore)
+const { store } =storeToRefs(projectStore)
+
 
 onBeforeMount(async () => {
   useStorage("engine", storage)

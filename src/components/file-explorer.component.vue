@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onBeforeMount, onBeforeUnmount, ref, watch } from 'vue';
 
-import { useEngineStore } from '@/stores/engine.store';
+import { useProjectStore } from '@/stores/project.store';
 import { storeToRefs } from 'pinia';
 import { BaseDirectory, copyFile, remove } from '@tauri-apps/plugin-fs';
 import { basename, dirname } from '@tauri-apps/api/path';
@@ -41,8 +41,8 @@ const emits = defineEmits<{
 
 const toast = useToast()
 const confirmDialog = useConfirm()
-const engineStore = useEngineStore()
-const { currentProject } = storeToRefs(engineStore)
+const projectStore = useProjectStore()
+const { currentProject } = storeToRefs(projectStore)
 const modalStore = useModalStore()
 const { menuExplorerOptions } = storeToRefs(useMenuStore())
 
